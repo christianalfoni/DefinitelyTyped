@@ -34,6 +34,7 @@ export type RouteObject<TKeys = {}, TState = any> = TKeys & {
     thunk?: RouteThunk<TState>;
     fromPath?(path: string, key?: string): string;
     toPath?(param: string, key?: string): string;
+    confirmLeave?: (state: TState, action: Action) => string | void;
 };
 
 export type Route<TKeys = {}, TState = any> = RouteString | RouteObject<TKeys, TState>;
